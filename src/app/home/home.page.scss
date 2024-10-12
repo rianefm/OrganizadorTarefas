@@ -1,21 +1,35 @@
+:root {
+  --primary-bg: #02111b;
+  --secondary-color: #8c8c8c;
+  --button-bg: #5067ff;
+  --button-color: #fff;
+  --placeholder-color: #ccc;
+  --input-border: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --card-bg: #ffffff;
+  --card-text: #333333;
+  --border-color: #ffffff;
+}
+
 /* Configurações gerais de ion-content */
 ion-content {
-  --background: #02111b !important;
+  background-color: var(--primary-bg) !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 16px;
+  color: #fff;
 }
 
 /* Estilização do container principal */
 #container {
   width: 100%;
   max-width: 600px;
-  background-color: #02111b !important;
+  background-color: var(--primary-bg) !important;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--shadow-color);
   border-radius: 10px;
   margin: auto;
 }
@@ -33,24 +47,34 @@ ion-item {
   color: #fff;
 }
 
-ion-input{
+ion-card {
+  background-color: #02111b;
+  box-shadow: 0 4px 8px #333333;
+  color: #fff;
+}
+
+ion-input {
   padding-left: 10px;
 }
 
+ion-icon {
+  color: #fff;
+}
 /* Título do formulário */
 #task-title {
   font-size: large;
   font-weight: bolder;
-  line-height: 26px;
-  color: #fff;
   margin-bottom: 10px;
   border: 1px solid #fff;
   border-radius: 5px;
+  padding: 8px 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 ion-select {
-  --color: #fff;
-  --placeholder-color: #ccc;
+  --color: var(--primary-color);
+  --placeholder-color: var(--placeholder-color);
   border: 1px solid #fff;
   border-radius: 5px;
   padding-left: 10px;
@@ -61,8 +85,8 @@ ion-button#adicionarTarefa {
   display: block;
   width: 100%;
   margin-top: 20px;
-  --background: #5067ff;
-  --color: #fff;
+  --background: var(--button-bg);
+  --color: var(--button-color);
   border-radius: 5px;
   padding: 12px;
 }
@@ -72,11 +96,12 @@ ion-button#adicionarTarefa {
   margin: 20px 0;
   text-align: center;
   color: #fff;
+  box-shadow: 0 2px 3px #333333;
 }
 
 ion-datetime {
-  --color: #fff;
-  --background: #02111b;
+  --color: var(--primary-color);
+  --background: var(--primary-bg);
 }
 
 /* Ajustes de espaçamento */
@@ -101,13 +126,13 @@ ion-button {
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: #8c8c8c;
+  color: var(--secondary-color);
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
-  color: #5067ff;
+  color: var(--button-bg);
 }
 
 /* Estilização do título "Minhas Tarefas" */
@@ -115,44 +140,45 @@ ion-button {
   width: 100%;
   max-width: 600px;
   margin-top: 20px;
-  background-color: #02111b;
+  background-color: var(--primary-bg);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--shadow-color);
   color: #fff;
 }
 
 /* Estilização do título */
 #task-list-section h2 {
   font-size: 24px;
-  color: #333333;
+  color: var(--card-text);
   margin-bottom: 10px;
   text-align: left;
 }
 
 .task-item-title {
   font-size: 16px;
-  color: #333333;
+  color: var(--card-text);
 }
 
 .task-item {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* Estilização dos botões de ações */
 .task-item-actions ion-button {
-  --background: #5067ff; /* Cor de fundo dos botões */
-  --color: #fff; /* Cor do texto dos botões */
+  --background: var(--button-bg);
+  --color: var(--button-color);
   border-radius: 5px;
   padding: 6px 12px;
 }
 
 .list-md {
-  background-color: #02111b;
-  color: #333333;
+  background-color: var(--primary-bg);
+  color: #fff;
 }
 
 .icon-inner,
@@ -161,34 +187,64 @@ svg {
   display: block;
   height: 100%;
   width: 100%;
-  color: azure;
+  color: rgb(255, 255, 255);
 }
-
-
 
 .task-list {
   color: #fff;
 }
 
-ion-card-header{
-  background-color: #02111b;
-
+ion-card-header {
+  background-color: var(--primary-bg);
+  color: #fff;
 }
 
-ion-card-title{
-  color:#ffffff;
+ion-card-title {
+  color: #fff;
 }
 
-
-ion-segment{
-  background-color: #ffffff;
+ion-segment {
+  background-color: var(--card-bg);
+  color: #fff;
 }
 
-ion-icon{
-  color:#ffffff;
-}
-
-#task-title ion-input{
+#task-title ion-input {
   padding-left: 30px;
 }
 
+ion-input:hover,
+ion-select:hover,
+#task-title:hover,
+ion-label:hover {
+  color: #fff;
+}
+
+ion-item:hover {
+  color: #fff;
+}
+
+ion-item:hover ion-icon {
+  color: #fff;
+}
+
+ion-button:hover {
+  --background: #4056f4;
+  --color: #fff;
+}
+
+ion-label:hover {
+  color: #fff;
+}
+
+ion-segment-button {
+  --color: #fff;
+}
+
+ion-segment-button[aria-selected="false"] {
+  --color: #8c8c8c;
+}
+
+ion-item h2,
+ion-item p {
+  color: #fff;
+}

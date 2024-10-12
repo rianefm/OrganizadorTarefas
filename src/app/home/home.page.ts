@@ -15,10 +15,10 @@ export class HomePage {
     completed: false,
   };
 
-  filter: string = 'all'; // Variável para armazenar o filtro atual
+  filter: string = 'all'; 
 
   constructor() {
-    this.loadTasks(); // Carregar tarefas ao inicializar
+    this.loadTasks(); 
   }
 
   // Função para adicionar uma nova tarefa
@@ -39,19 +39,19 @@ export class HomePage {
       dueDate: new Date(),
       completed: false,
     };
-    this.saveTasks(); // Salvar as tarefas após adicionar
+    this.saveTasks(); 
   }
 
   // Função para deletar uma tarefa
   deleteTask(index: number) {
     this.tasks.splice(index, 1);
-    this.saveTasks(); // Salvar as tarefas após deletar
+    this.saveTasks(); 
   }
 
   // Função para alternar o estado da tarefa (concluída ou pendente)
   toggleTaskCompletion(index: number) {
     this.tasks[index].completed = !this.tasks[index].completed;
-    this.saveTasks(); // Salvar as tarefas após alterar o estado
+    this.saveTasks(); 
   }
 
   // Função para salvar tarefas no localStorage
@@ -82,6 +82,6 @@ export class HomePage {
       return this.tasks.filter((task) => task.completed);
     }
 
-    return this.tasks; // Retorne todas as tarefas por padrão
+    return this.tasks; 
   }
 }
