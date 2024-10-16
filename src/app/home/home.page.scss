@@ -1,0 +1,250 @@
+:root {
+  --primary-bg: #02111b;
+  --secondary-color: #8c8c8c;
+  --button-bg: #5067ff;
+  --button-color: #fff;
+  --placeholder-color: #ccc;
+  --input-border: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --card-bg: #ffffff;
+  --card-text: #333333;
+  --border-color: #ffffff;
+}
+
+/* Configurações gerais de ion-content */
+ion-content {
+  background-color: var(--primary-bg) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  color: #fff;
+}
+
+/* Estilização do container principal */
+#container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--primary-bg) !important;
+  padding: 20px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border-radius: 10px;
+  margin: auto;
+}
+
+form {
+  width: 100%;
+}
+
+/* Estilização dos itens do formulário (campos, seletores, etc.) */
+ion-item {
+  width: 100%;
+  --background: transparent;
+  border: none;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+ion-card {
+  background-color: #02111b;
+  box-shadow: 0 4px 8px #333333;
+  color: #fff;
+}
+
+ion-input {
+  padding-left: 10px;
+}
+
+ion-icon {
+  color: #fff;
+}
+/* Título do formulário */
+#task-title {
+  font-size: large;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 8px 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ion-select {
+  --color: var(--primary-color);
+  --placeholder-color: var(--placeholder-color);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+/* Estilização do botão Adicionar Tarefa */
+ion-button#adicionarTarefa {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  --background: var(--button-bg);
+  --color: var(--button-color);
+  border-radius: 5px;
+  padding: 12px;
+}
+
+/* Centralização e espaçamento do calendário */
+#task-due-date {
+  margin: 20px 0;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 2px 3px #333333;
+}
+
+ion-datetime {
+  --color: var(--primary-color);
+  --background: var(--primary-bg);
+}
+
+/* Ajustes de espaçamento */
+.container,
+#task-due-date,
+#adicionarTarefa,
+#task-list-section,
+#task-title {
+  padding-top: 20px;
+}
+
+ion-button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+  color: #fff;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+  color: var(--button-bg);
+}
+
+/* Estilização do título "Minhas Tarefas" */
+#task-list-section {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  background-color: var(--primary-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  color: #fff;
+}
+
+/* Estilização do título */
+#task-list-section h2 {
+  font-size: 24px;
+  color: var(--card-text);
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.task-item-title {
+  font-size: 16px;
+  color: var(--card-text);
+}
+
+.task-item {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização dos botões de ações */
+.task-item-actions ion-button {
+  --background: var(--button-bg);
+  --color: var(--button-color);
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+.list-md {
+  background-color: var(--primary-bg);
+  color: #fff;
+}
+
+.icon-inner,
+.ionicon,
+svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.task-list {
+  color: #fff;
+}
+
+ion-card-header {
+  background-color: var(--primary-bg);
+  color: #fff;
+}
+
+ion-card-title {
+  color: #fff;
+}
+
+ion-segment {
+  background-color: var(--card-bg);
+  color: #fff;
+}
+
+#task-title ion-input {
+  padding-left: 30px;
+}
+
+ion-input:hover,
+ion-select:hover,
+#task-title:hover,
+ion-label:hover {
+  color: #fff;
+}
+
+ion-item:hover {
+  color: #fff;
+}
+
+ion-item:hover ion-icon {
+  color: #fff;
+}
+
+ion-button:hover {
+  --background: #4056f4;
+  --color: #fff;
+}
+
+ion-label:hover {
+  color: #fff;
+}
+
+ion-segment-button {
+  --color: #fff;
+}
+
+ion-segment-button[aria-selected="false"] {
+  --color: #8c8c8c;
+}
+
+ion-item h2,
+ion-item p {
+  color: #fff;
+}

@@ -1,0 +1,56 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size-md="6" size-xs="12">
+        <h2>Cadastro</h2>
+        <p>Crie sua conta com o email e a senha</p>
+
+
+      
+        <ion-item>
+          <ion-label position="floating">Digite seu nome</ion-label>
+          <ion-input type="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Digite seu email</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Digite sua senha</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+        <ion-row class="ion-justify-content-between ion-padding-vertical">
+          <ion-col>
+            <a href="#">Já possuo uma conta</a>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="dark">Cadastrar</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+          <ion-fab-button color="danger">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

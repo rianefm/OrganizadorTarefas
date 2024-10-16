@@ -1,0 +1,159 @@
+<!-- Adicionando o side menu no home.page.html -->
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item button routerLink="/podcasts">
+        <ion-icon slot="start" name="musical-notes-outline"></ion-icon>
+        <ion-label>Podcasts</ion-label>
+      </ion-item>
+      <ion-item button routerLink="/livros">
+        <ion-icon slot="start" name="book-outline"></ion-icon>
+        <ion-label>Livros para Estudos</ion-label>
+      </ion-item>
+      <ion-item button routerLink="/login">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <ion-label>Sair</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Cabeçalho com botão para abrir o menu -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Organize seu Saber</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="main-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Organize seu Saber</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="toggleDarkMode()">
+          <ion-icon slot="icon-only" name="moon-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Conteúdo da página -->
+  <div class="container">
+    <section id="task-form-section">
+      <form id="task-form">
+        <ion-item>
+          <ion-input
+            type="text"
+            id="task-title"
+            placeholder="Título da tarefa"
+            [(ngModel)]="newTask.title"
+            name="title"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-select
+            id="task-category"
+            placeholder="Selecione uma categoria"
+            [(ngModel)]="newTask.category"
+            name="category"
+          >
+            <ion-select-option value="trabalho">Trabalho</ion-select-option>
+            <ion-select-option value="pessoal">Pessoal</ion-select-option>
+            <ion-select-option value="estudo">Estudo</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select
+            id="task-priority"
+            placeholder="Selecione a prioridade"
+            [(ngModel)]="newTask.priority"
+            name="priority"
+          >
+            <ion-select-option value="baixa">Baixa</ion-select-option>
+            <ion-select-option value="media">Média</ion-select-option>
+            <ion-select-option value="alta">Alta</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-datetime
+            id="task-due-date"
+            placeholder="Data de vencimento"
+            [(ngModel)]="newTask.dueDate"
+            name="dueDate"
+          ></ion-datetime>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          type="button"
+          id="adicionarTarefa"
+          color="primary"
+          (click)="addTask()"
+        >
+          Adicionar Tarefa
+        </ion-button>
+      </form>
+    </section>
+
+    <section id="task-list-section">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Minhas Tarefas</ion-card-title>
+        </ion-card-header>
+
+        <!-- Segmento de filtros -->
+        <ion-segment [(ngModel)]="filter" id="task-filters">
+          <ion-segment-button value="all">
+            <ion-label>Todas</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="active">
+            <ion-label>Pendentes</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="completed">
+            <ion-label>Concluídas</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <!-- Lista de tarefas filtradas -->
+        <ion-list id="task-list">
+          <ion-item *ngFor="let task of getFilteredTasks(); let i = index">
+            <ion-label>
+              <h2>{{ task.title }}</h2>
+              <p>Categoria: {{ task.category }}</p>
+              <p>Prioridade: {{ task.priority }}</p>
+              <p>Data de vencimento: {{ task.dueDate | date:'short' }}</p>
+            </ion-label>
+
+            <!-- Botões para completar, marcar como pendente ou excluir -->
+            <ion-buttons slot="end">
+              <ion-checkbox
+                color="success"
+                [checked]="task.completed"
+                (ionChange)="toggleTaskCompletion(i)"
+              ></ion-checkbox>
+              <ion-button fill="clear" color="danger" (click)="deleteTask(i)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </section>
+  </div>
+</ion-content>
