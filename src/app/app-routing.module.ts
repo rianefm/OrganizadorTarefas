@@ -18,9 +18,18 @@ const routes: Routes = [
   {
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
-  },  {
+  },
+  {
     path: 'sobre',
     loadChildren: () => import('./sobre/sobre.module').then( m => m.SobrePageModule)
+  },
+  {
+    path: 'livros',
+    loadChildren: () => import('./livros/livros.module').then( m => m.LivrosPageModule)
+  },
+  {
+    path: 'podcasts',
+    loadChildren: () => import('./podcasts/podcasts.module').then( m => m.PodcastsPageModule)
   },
 
 ];

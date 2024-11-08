@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Livros para estudos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchBooks()"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let book of books">
+      <ion-label>
+        <h2>{{ book.volumeInfo.title }}</h2>
+        <p>{{ book.volumeInfo.authors?.join(', ') }}</p>
+        <p>{{ book.volumeInfo.publishedDate }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
