@@ -11,7 +11,7 @@
   --border-color: #ffffff;
 }
 
-/* Configurações gerais de ion-content */
+
 ion-content {
   background-color: var(--primary-bg) !important;
   display: flex;
@@ -23,7 +23,7 @@ ion-content {
   color: #fff;
 }
 
-/* Estilização do container principal */
+
 #container {
   width: 100%;
   max-width: 600px;
@@ -38,7 +38,7 @@ form {
   width: 100%;
 }
 
-/* Estilização dos itens do formulário (campos, seletores, etc.) */
+
 ion-item {
   width: 100%;
   --background: transparent;
@@ -60,7 +60,7 @@ ion-input {
 ion-icon {
   color: #fff;
 }
-/* Título do formulário */
+
 #task-title {
   font-size: large;
   font-weight: bolder;
@@ -80,7 +80,7 @@ ion-select {
   padding-left: 10px;
 }
 
-/* Estilização do botão Adicionar Tarefa */
+
 ion-button#adicionarTarefa {
   display: block;
   width: 100%;
@@ -91,7 +91,7 @@ ion-button#adicionarTarefa {
   padding: 12px;
 }
 
-/* Centralização e espaçamento do calendário */
+
 #task-due-date {
   margin: 20px 0;
   text-align: center;
@@ -104,7 +104,7 @@ ion-datetime {
   --background: var(--primary-bg);
 }
 
-/* Ajustes de espaçamento */
+
 .container,
 #task-due-date,
 #adicionarTarefa,
@@ -135,7 +135,7 @@ ion-button {
   color: var(--button-bg);
 }
 
-/* Estilização do título "Minhas Tarefas" */
+
 #task-list-section {
   width: 100%;
   max-width: 600px;
@@ -147,7 +147,7 @@ ion-button {
   color: #fff;
 }
 
-/* Estilização do título */
+
 #task-list-section h2 {
   font-size: 24px;
   color: var(--card-text);
@@ -168,7 +168,7 @@ ion-button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilização dos botões de ações */
+
 .task-item-actions ion-button {
   --background: var(--button-bg);
   --color: var(--button-color);

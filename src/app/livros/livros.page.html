@@ -8,14 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchBooks()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchBooks(searchTerm)"></ion-searchbar>
 
   <ion-list>
-    <ion-item *ngFor="let book of books">
+    <ion-item *ngFor="let book of books" (click)="viewBookDetails(book.id)">
       <ion-label>
         <h2>{{ book.volumeInfo.title }}</h2>
-        <p>{{ book.volumeInfo.authors?.join(', ') }}</p>
-        <p>{{ book.volumeInfo.publishedDate }}</p>
       </ion-label>
     </ion-item>
   </ion-list>

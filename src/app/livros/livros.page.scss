@@ -1,0 +1,17 @@
+ion-list {
+  background-color: #02111b;
+}
+
+ion-item {
+  --background: #02111b;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+ion-label {
+  color: #ffffff;
+}
+
+ion-item:hover {
+  --background: #03314c;
+}

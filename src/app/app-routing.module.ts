@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'podcasts',
     loadChildren: () => import('./podcasts/podcasts.module').then( m => m.PodcastsPageModule)
+  },  {
+    path: 'book-details',
+    loadChildren: () => import('./book-details/book-details.module').then( m => m.BookDetailsPageModule)
   },
+
 
 ];
 

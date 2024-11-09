@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ book?.volumeInfo.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="book">
+  <ion-card>
+    <img
+      [src]="book.volumeInfo.imageLinks?.thumbnail"
+      alt="{{ book.volumeInfo.title }}"
+    />
+    <ion-card-header>
+      <ion-card-title>{{ book.volumeInfo.title }}</ion-card-title>
+      <ion-card-subtitle
+        >{{ book.volumeInfo.authors?.join(', ') }}</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ book.volumeInfo.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
