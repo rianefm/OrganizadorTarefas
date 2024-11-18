@@ -10,11 +10,11 @@
 <ion-content [fullscreen]="true">
   <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchPodcasts()"></ion-searchbar>
 
-  <ion-list *ngIf="podcasts.length > 0">
+  <ion-list>
     <ion-item *ngFor="let podcast of podcasts">
       <ion-label>
-        <h2>{{ podcast.title || podcast.title_original }}</h2>
-        <p>{{ podcast.publisher || podcast.publisher_original }}</p>
+        <h2>{{ podcast.name || podcast.title }}</h2>
+        <p>{{ podcast.publisher || 'Sem informação de publicador' }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
