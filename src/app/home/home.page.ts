@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +16,11 @@ export class HomePage {
     completed: false,
   };
 
-  filter: string = 'all'; 
+  filter: string = 'all';
 
-  constructor() {
-    this.loadTasks(); 
+  constructor(private toastController: ToastController) {
+    this.loadTasks();
+    this.checkTasks(); // Verifica tarefas ao carregar a página
   }
 
   // Função para adicionar uma nova tarefa
@@ -39,19 +41,22 @@ export class HomePage {
       dueDate: new Date(),
       completed: false,
     };
-    this.saveTasks(); 
+    this.saveTasks();
+    this.checkTasks(); // Verifica tarefas após adicionar
   }
 
   // Função para deletar uma tarefa
   deleteTask(index: number) {
     this.tasks.splice(index, 1);
-    this.saveTasks(); 
+    this.saveTasks();
+    this.checkTasks(); // Verifica tarefas após deletar
   }
 
   // Função para alternar o estado da tarefa (concluída ou pendente)
   toggleTaskCompletion(index: number) {
     this.tasks[index].completed = !this.tasks[index].completed;
-    this.saveTasks(); 
+    this.saveTasks();
+    this.checkTasks(); // Atualiza notificações após conclusão/pendência
   }
 
   // Função para salvar tarefas no localStorage
@@ -67,11 +72,6 @@ export class HomePage {
     }
   }
 
-  // Função para alternar o modo escuro
-  toggleDarkMode() {
-    document.body.classList.toggle('dark');
-  }
-
   // Função para obter tarefas filtradas com base no filtro atual
   getFilteredTasks() {
     if (this.filter === 'all') {
@@ -81,7 +81,53 @@ export class HomePage {
     } else if (this.filter === 'completed') {
       return this.tasks.filter((task) => task.completed);
     }
+    return this.tasks;
+  }
 
-    return this.tasks; 
+  async checkTasks() {
+    const now = new Date();
+  
+    // Tarefas próximas do vencimento (em até 2 dias)
+    const upcomingTasks = this.tasks.filter((task) => {
+      if (task.completed) return false; // Ignora tarefas concluídas
+      const dueDate = new Date(task.dueDate);
+      const timeDifference = dueDate.getTime() - now.getTime();
+      const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+      return daysDifference <= 2 && daysDifference >= 0;
+    });
+  
+    // Tarefas atrasadas
+    const overdueTasks = this.tasks.filter((task) => {
+      if (task.completed) return false; // Ignora tarefas concluídas
+      const dueDate = new Date(task.dueDate);
+      return dueDate < now;
+    });
+  
+    // Notifica tarefas próximas do vencimento
+    if (upcomingTasks.length > 0) {
+      await this.showToast(
+        `Você tem ${upcomingTasks.length} tarefa(s) próximas do vencimento!`,
+        'warning'
+      );
+    }
+  
+    // Notifica tarefas atrasadas
+    if (overdueTasks.length > 0) {
+      await this.showToast(
+        `Você tem ${overdueTasks.length} tarefa(s) atrasada(s)!`,
+        'danger'
+      );
+    }
+  }
+
+  // Função para exibir notificações (Toast)
+  async showToast(message: string, color: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 3000,
+      color,
+      position: 'top',
+    });
+    await toast.present();
   }
 }

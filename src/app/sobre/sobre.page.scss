@@ -7,30 +7,48 @@ ion-back-button {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  color: #3b5998; 
+  text-align: center; 
+  color: #3b5998;
   font-weight: bolder;
-  width: 80%;
-  margin: 15% auto;
-  padding: 30px;
+  width: 90%;
+  max-width: 600px; 
+  margin: 10% auto;
+  padding: 20px;
   border-radius: 20px;
-  text-align: center;
-  background-color: #f0f0f0; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container p {
   color: #3b5998;
   font-weight: bold;
-}
-
-h2 {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-p {
+  line-height: 1.6;
   margin-bottom: 1.5em;
+}
+
+.container h2 {
+  font-size: 2em; 
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20% auto;
+    padding: 15px;
+  }
+
+  .container h2 {
+    font-size: 1.8em; 
+  }
+
+  .container p {
+    font-size: 1em; 
+  }
 }
 
 ion-label {
