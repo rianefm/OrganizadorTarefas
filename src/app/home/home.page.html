@@ -7,10 +7,6 @@
 
   <ion-content>
     <ion-list>
-      <!-- <ion-item button routerLink="/podcasts">
-        <ion-icon slot="start" name="musical-notes-outline"></ion-icon>
-        <ion-label>Podcasts</ion-label>
-      </ion-item> -->
       <ion-item button routerLink="/livros">
         <ion-icon slot="start" name="book-outline"></ion-icon>
         <ion-label>Livros para Estudos</ion-label>
@@ -100,7 +96,7 @@
           type="button"
           id="adicionarTarefa"
           color="primary"
-          (click)="addTask()"
+          (click)="addTask(); triggerHapticFeedback()"
         >
           Adicionar Tarefa
         </ion-button>

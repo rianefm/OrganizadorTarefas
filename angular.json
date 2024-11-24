@@ -68,7 +68,12 @@
               "progress": false
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+          "options": {
+            "experiments": {
+              "topLevelAwait": true
+            }
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

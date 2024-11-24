@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -42,7 +43,8 @@ export class HomePage {
       completed: false,
     };
     this.saveTasks();
-    this.checkTasks(); // Verifica tarefas após adicionar
+    this.checkTasks(); 
+    this.triggerHapticFeedback();
   }
 
   // Função para deletar uma tarefa
@@ -84,6 +86,14 @@ export class HomePage {
     return this.tasks;
   }
 
+  // Método para disparar feedback háptico
+  async triggerHapticFeedback() {
+    await Haptics.impact({
+      style: ImpactStyle.Medium
+    });
+  }
+
+  // Método para verificar tarefas e enviar notificações
   async checkTasks() {
     const now = new Date();
   

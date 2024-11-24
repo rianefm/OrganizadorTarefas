@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'organizador de tarefas ',
+  appId: 'com.example.app',
+  appName: 'organizador-de-tarefas',
   webDir: 'www'
 };
 
