@@ -1,0 +1,48 @@
+ion-content {
+    --background: var(--primary-bg);
+    color: #fff;
+    padding: 16px;
+  }
+  
+  .container {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .favorite-book-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .favorite-book-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-bg);
+  }
+  
+  .favorite-book-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+  }
+  
+  .favorite-book-card img {
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 16px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  

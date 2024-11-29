@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Livros Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="favoriteBooks.length > 0; else noFavorites">
+    <ion-item *ngFor="let book of favoriteBooks">
+      <ion-thumbnail slot="start">
+        <img [src]="book.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ book.title }}</h2>
+      </ion-label>
+      <ion-button fill="clear" color="danger" (click)="removeFavorite(book.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noFavorites>
+    <ion-text color="medium">
+      <h2 style="text-align: center">Nenhum livro favoritado</h2>
+    </ion-text>
+  </ng-template>
+
+
+</ion-content>
