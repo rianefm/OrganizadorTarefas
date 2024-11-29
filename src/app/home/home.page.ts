@@ -25,7 +25,7 @@ export class HomePage {
   }
 
   // Função para adicionar uma nova tarefa
-  addTask() {
+  async addTask() {
     if (
       !this.newTask.title ||
       !this.newTask.category ||
@@ -43,22 +43,29 @@ export class HomePage {
       completed: false,
     };
     this.saveTasks();
-    this.checkTasks(); 
+    this.checkTasks();
     this.triggerHapticFeedback();
+    await this.showToast('Tarefa adicionada com sucesso!', 'success'); // Toast de sucesso
   }
 
   // Função para deletar uma tarefa
-  deleteTask(index: number) {
+  async deleteTask(index: number) {
     this.tasks.splice(index, 1);
     this.saveTasks();
     this.checkTasks(); // Verifica tarefas após deletar
+    await this.showToast('Tarefa excluída com sucesso!', 'danger'); // Toast de exclusão
   }
 
   // Função para alternar o estado da tarefa (concluída ou pendente)
-  toggleTaskCompletion(index: number) {
+  async toggleTaskCompletion(index: number) {
     this.tasks[index].completed = !this.tasks[index].completed;
     this.saveTasks();
     this.checkTasks(); // Atualiza notificações após conclusão/pendência
+    const message = this.tasks[index].completed
+      ? 'Tarefa marcada como concluída!'
+      : 'Tarefa marcada como pendente!';
+    const color = this.tasks[index].completed ? 'success' : 'warning';
+    await this.showToast(message, color); // Toast de conclusão/pendência
   }
 
   // Função para salvar tarefas no localStorage
@@ -89,14 +96,14 @@ export class HomePage {
   // Método para disparar feedback háptico
   async triggerHapticFeedback() {
     await Haptics.impact({
-      style: ImpactStyle.Medium
+      style: ImpactStyle.Medium,
     });
   }
 
   // Método para verificar tarefas e enviar notificações
   async checkTasks() {
     const now = new Date();
-  
+
     // Tarefas próximas do vencimento (em até 2 dias)
     const upcomingTasks = this.tasks.filter((task) => {
       if (task.completed) return false; // Ignora tarefas concluídas
@@ -105,14 +112,14 @@ export class HomePage {
       const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
       return daysDifference <= 2 && daysDifference >= 0;
     });
-  
+
     // Tarefas atrasadas
     const overdueTasks = this.tasks.filter((task) => {
       if (task.completed) return false; // Ignora tarefas concluídas
       const dueDate = new Date(task.dueDate);
       return dueDate < now;
     });
-  
+
     // Notifica tarefas próximas do vencimento
     if (upcomingTasks.length > 0) {
       await this.showToast(
@@ -120,7 +127,7 @@ export class HomePage {
         'warning'
       );
     }
-  
+
     // Notifica tarefas atrasadas
     if (overdueTasks.length > 0) {
       await this.showToast(
