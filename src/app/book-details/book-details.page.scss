@@ -1,22 +1,32 @@
 ion-card {
-    background-color: #272727; 
-    color: #ffffff; 
-  }
-  
-  ion-card-header,
-  ion-card-content,
-  ion-card-title,
-  ion-card-subtitle {
-    background-color: #272727; 
-    color: #ffffff; 
-  }
-  
-  img {
-    width: 20%; 
-    border-bottom: 1px solid #333333;
-  }
-  
-  p {
-    margin: 0; 
-  }
-  
+  background-color: #272727;
+  color: #ffffff;
+  text-align: center; /* Centraliza conteúdo */
+}
+
+ion-card-header,
+ion-card-content,
+ion-card-title,
+ion-card-subtitle {
+  background-color: #272727;
+  color: #ffffff;
+}
+
+img {
+  width: 60%; /* Torna a imagem maior */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  display: block; /* Garantia de centralização */
+  border-bottom: 1px solid #333333;
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+p {
+  margin: 10px 0; /* Ajusta espaçamento */
+  line-height: 1.6; /* Melhora a legibilidade */
+  font-size: 16px; /* Ajusta o tamanho do texto */
+}
+
+div[innerHTML] {
+  text-align: left; /* Alinha o texto descritivo à esquerda */
+  margin: 15px;
+}
