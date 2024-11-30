@@ -83,7 +83,7 @@ export class PomodoroPage implements OnInit {
 
   // Play alarm sound
   playAlarm() {
-    const audio = new Audio('assets/a');
+    const audio = new Audio('assets/alarme.mp3');
     audio.play();
   }
 }
