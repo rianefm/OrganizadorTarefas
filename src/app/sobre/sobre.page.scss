@@ -1,9 +1,9 @@
 ion-header {
-  --background: #3b5998; 
+  --background: #3b5998;
 }
 
 ion-back-button {
-  --color: #ffffff; 
+  --color: #ffffff;
 }
 
 .container {
@@ -15,10 +15,10 @@ ion-back-button {
   color: #3b5998;
   font-weight: bold;
   width: 90%;
-  max-width: 600px; 
+  max-width: 600px;
   margin: 10% auto;
-  padding: 30px; 
-  border-radius: 20px; 
+  padding: 30px;
+  border-radius: 20px;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -27,24 +27,25 @@ ion-back-button {
   font-size: 2.2em;
   font-weight: bold;
   margin-bottom: 1em;
-  color: #3b5998; 
+  color: #3b5998;
 }
 
 .container p {
   color: #555555;
-  font-size: 1.2em; 
+  font-size: 1.2em;
+  font-weight: bold;
   line-height: 1.8;
   margin-bottom: 1.5em;
 }
 
 .container p:last-of-type {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
   .container {
     margin: 15% auto;
-    padding: 20px; 
+    padding: 20px;
   }
 
   .container h2 {
@@ -57,5 +58,5 @@ ion-back-button {
 }
 
 ion-label {
-  color: #000000; 
+  color: #000000;
 }

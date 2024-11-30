@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pomodoro Timer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h1>{{ displayTime }}</h1>
+    <div class="controls">
+      <ion-button color="success" (click)="startTimer()" [disabled]="isRunning">
+        <ion-icon name="play"></ion-icon> Iniciar
+      </ion-button>
+      <ion-button
+        color="warning"
+        (click)="pauseTimer()"
+        [disabled]="!isRunning"
+      >
+        <ion-icon name="pause"></ion-icon> Pausar
+      </ion-button>
+      <ion-button color="danger" (click)="resetTimer()">
+        <ion-icon name="refresh"></ion-icon> Reiniciar
+      </ion-button>
+    </div>
+    <div>
+      <p  class="">{{ phaseMessage }}</p>
+    </div>
+  </div>
+</ion-content>

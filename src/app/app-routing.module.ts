@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'livros-favoritos',
     loadChildren: () => import('./livros-favoritos/livros-favoritos.module').then( m => m.LivrosFavoritosPageModule)
   },
+  {
+    path: 'pomodoro',
+    loadChildren: () => import('./pomodoro/pomodoro.module').then( m => m.PomodoroPageModule)
+  },
 ];
 
 @NgModule({

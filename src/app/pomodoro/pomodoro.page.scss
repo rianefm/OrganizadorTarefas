@@ -1,0 +1,90 @@
+:root {
+  --primary-bg: #02111b;
+  --secondary-color: #8c8c8c;
+  --button-bg: #5067ff;
+  --button-color: #fff;
+  --placeholder-color: #ccc;
+  --input-border: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --card-bg: #ffffff;
+  --card-text: #333333;
+  --border-color: #ffffff;
+}
+
+#container {
+  background-color: var(--primary-bg) !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  p {
+    font-size: 3rem;
+    color: #ffffffd6;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 4rem; 
+  }
+
+  .container .controls {
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  .container p {
+    font-size: 1rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 3rem; 
+  }
+
+  .container .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .container h1 {
+    font-size: 3.5rem; 
+  }
+
+  .container .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}

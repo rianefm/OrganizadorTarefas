@@ -8,24 +8,25 @@ ion-back-button {
 
 .container {
   align-items: center;
-  color: #3b5998; 
+  color: #3b5998;
   font-weight: bolder;
   width: 80%;
   margin: 15% auto;
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-  background-color: #f0f0f0; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f0f0f0fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container p {
-  color: #3b5998;
+  color: #555555;
   font-weight: bold;
 }
 
 h2 {
   font-size: 1.5em;
+  color: #555555;
   font-weight: bold;
 }
 

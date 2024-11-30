@@ -11,7 +11,6 @@
   --border-color: #ffffff;
 }
 
-
 ion-content {
   background-color: var(--primary-bg) !important;
   display: flex;
@@ -22,7 +21,6 @@ ion-content {
   padding: 16px;
   color: #fff;
 }
-
 
 #container {
   width: 100%;
@@ -37,7 +35,6 @@ ion-content {
 form {
   width: 100%;
 }
-
 
 ion-item {
   width: 100%;
@@ -80,7 +77,6 @@ ion-select {
   padding-left: 10px;
 }
 
-
 ion-button#adicionarTarefa {
   display: block;
   width: 100%;
@@ -91,8 +87,10 @@ ion-button#adicionarTarefa {
   padding: 12px;
 }
 
-
 #task-due-date {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
   margin: 20px 0;
   text-align: center;
   color: #fff;
@@ -103,7 +101,6 @@ ion-datetime {
   --color: var(--primary-color);
   --background: var(--primary-bg);
 }
-
 
 .container,
 #task-due-date,
@@ -135,7 +132,6 @@ ion-button {
   color: var(--button-bg);
 }
 
-
 #task-list-section {
   width: 100%;
   max-width: 600px;
@@ -147,7 +143,6 @@ ion-button {
   box-shadow: 0 4px 8px var(--shadow-color);
   color: #fff;
 }
-
 
 #task-list-section h2 {
   font-size: 24px;
@@ -168,7 +163,6 @@ ion-button {
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 
 .task-item-actions ion-button {
   --background: var(--button-bg);
@@ -209,8 +203,22 @@ ion-segment {
   color: #fff;
 }
 
-#task-title ion-input {
-  padding-left: 30px;
+#task-title {
+  padding-left: 20px;
+}
+
+ion-item input {
+  padding-left: 10px; 
+  color: #fff; 
+  background-color: transparent; 
+  border: none; 
+  font-size: 12px; 
+  outline: none; 
+}
+
+ion-item input::placeholder {
+  color: #ccc; 
+  opacity: 0.8; 
 }
 
 ion-input:hover,
