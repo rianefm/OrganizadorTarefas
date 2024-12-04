@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-pomodoro',
@@ -85,5 +86,11 @@ export class PomodoroPage implements OnInit {
   playAlarm() {
     const audio = new Audio('assets/alarme.mp3');
     audio.play();
+  }
+
+  async triggerHapticFeedback() {
+    await Haptics.impact({
+      style: ImpactStyle.Medium,
+    });
   }
 }

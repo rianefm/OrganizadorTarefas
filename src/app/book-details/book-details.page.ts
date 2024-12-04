@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-book-details',
@@ -60,5 +62,11 @@ export class BookDetailsPage implements OnInit {
     }
 
     this.isFavorite = !this.isFavorite;
+  }
+
+  async triggerHapticFeedback() {
+    await Haptics.impact({
+      style: ImpactStyle.Medium,
+    });
   }
 }

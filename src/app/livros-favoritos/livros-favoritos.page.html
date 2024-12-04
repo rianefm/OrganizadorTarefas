@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="content-background">
   <ion-list *ngIf="favoriteBooks.length > 0; else noFavorites">
     <ion-item *ngFor="let book of favoriteBooks">
       <ion-thumbnail slot="start">

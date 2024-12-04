@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth'; // Importa o AngularFireAuth
 import firebase from 'firebase/compat/app'; // Importa o Firebase
 import { Router } from '@angular/router'; 
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-login',
@@ -19,11 +20,17 @@ export class LoginPage implements OnInit {
     this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then((result) => {
         console.log('Login bem-sucedido:', result);
-        this.router.navigate(['/home']); // Redireciona para a página inicial após o login
+        this.router.navigate(['/home']); 
       })
       .catch((error) => {
         console.error('Erro no login:', error);
       });
+  }
+
+  async triggerHapticFeedback() {
+    await Haptics.impact({
+      style: ImpactStyle.Medium,
+    });
   }
 
 }

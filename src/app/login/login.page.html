@@ -1,8 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-  
-      <ion-back-button></ion-back-button>
-  
+    <ion-back-button></ion-back-button>
+
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +16,11 @@
           <p>Com sua conta Google</p>
 
           <!-- Botão para login com Google -->
-          <ion-button expand="block" color="danger" (click)="loginWithGoogle()">
+          <ion-button
+            expand="block"
+            color="danger"
+            (click)="loginWithGoogle(); triggerHapticFeedback()"
+          >
             <ion-icon name="logo-google" slot="start"></ion-icon>
             Login com Google
           </ion-button>

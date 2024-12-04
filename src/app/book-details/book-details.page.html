@@ -25,7 +25,7 @@
         fill="outline"
         color="danger"
         expand="block"
-        (click)="toggleFavorite()"
+        (click)="toggleFavorite(); triggerHapticFeedback()"
       >
         <ion-icon
           [name]="isFavorite ? 'heart' : 'heart-outline'"
